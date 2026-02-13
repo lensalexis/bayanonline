@@ -1,0 +1,873 @@
+/* Fonts — loaded with the bundle so HubSpot doesn't need a separate link */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body { margin: 0; }
+
+/* Lenis Required CSS */
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+.jeskojets-scroll-block {
+    --jesko-light: #fff;
+    --jesko-dark: #0f0f0f;
+    --jesko-teal: #0d9488;
+    background-color: var(--jesko-light);
+    color: var(--jesko-dark);
+    width: 100%;
+    margin: 0; padding: 0;
+    overflow-x: hidden;
+}
+
+.jeskojets-scroll-block * {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+
+.jeskojets-scroll-block,
+.jeskojets-scroll-block .jesko-font {
+    font-family: "Inter", sans-serif;
+}
+
+.jeskojets-scroll-block img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+}
+
+.jeskojets-scroll-block h1 {
+    font-size: 4.5rem;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.jeskojets-scroll-block p {
+    font-family: "Inter", sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.2;
+}
+
+/* Scroll text reveal (terminal-style: lines slide up into view) */
+.jeskojets-scroll-block .text-reveal-line-mask {
+    display: block;
+    overflow: hidden;
+}
+.jeskojets-scroll-block .text-reveal-line {
+    display: block;
+    will-change: transform;
+}
+
+/* Hero Section */
+.jeskojets-scroll-block section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.jeskojets-scroll-block .hero {
+    color: var(--jesko-light);
+}
+
+.jeskojets-scroll-block .hero-inner {
+    perspective: 1000px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Layers */
+.jeskojets-scroll-block .hero-inner .sky-container,
+.jeskojets-scroll-block .hero-inner .hero-copy,
+.jeskojets-scroll-block .hero-inner .window-container,
+.jeskojets-scroll-block .hero-inner .hero-header {
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    will-change: transform;
+}
+
+/* 1. Sky (Background) */
+.jeskojets-scroll-block .hero-inner .sky-container {
+    height: 120%;
+    z-index: 1;
+}
+
+/* 2. Main Copy (Hidden initially, slides up) */
+.jeskojets-scroll-block .hero-inner .hero-copy {
+    height: 100vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    gap: 1.5rem;
+    z-index: 2;
+    text-align: left;
+}
+.jeskojets-scroll-block .hero-inner .hero-copy h1 {
+    width: 85%;
+    color: var(--jesko-light);
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.jeskojets-scroll-block .hero-inner .hero-copy .hero-copy-cta {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--jesko-light);
+    color: var(--jesko-dark);
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: opacity 0.2s;
+}
+.jeskojets-scroll-block .hero-inner .hero-copy .hero-copy-cta:hover {
+    opacity: 0.9;
+}
+
+/* 3. Window Frame (The "Aperture") */
+.jeskojets-scroll-block .hero-inner .window-container {
+    height: 100vh;
+    width: 100%;
+    z-index: 3;
+    transform-origin: center center;
+}
+.jeskojets-scroll-block .hero-inner .window-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+}
+
+/* 4. Initial Header (The text that zooms out) */
+.jeskojets-scroll-block .hero-inner .hero-header {
+    height: 100vh;
+    padding: 5rem;
+    display: flex;
+    transform-style: preserve-3d;
+    z-index: 4;
+}
+
+.jeskojets-scroll-block .hero-inner .hero-header .col {
+    flex: 1;
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+.jeskojets-scroll-block .hero-inner .hero-header .col p {
+    width: 60%;
+    opacity: 0.9;
+}
+.jeskojets-scroll-block .hero-inner .hero-header .col:nth-child(2) {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.jeskojets-scroll-block .scroll-down-prompt {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.jeskojets-scroll-block .scroll-down-arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 0.4em solid transparent;
+    border-right: 0.4em solid transparent;
+    border-top: 0.5em solid currentColor;
+    animation: scroll-down-bounce 1.5s ease-in-out infinite;
+}
+@keyframes scroll-down-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(0.35em); }
+}
+
+/* Parallax content (codegrid-nextjs-parallax-effect port) */
+.jeskojets-scroll-block .parallax-content {
+    background: #0f0f0f;
+    color: #fff;
+}
+.jeskojets-scroll-block .parallax-content .parallax-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    will-change: transform;
+}
+.jeskojets-scroll-block .parallax-content .parallax-img img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+}
+.jeskojets-scroll-block .parallax-content section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: visible;
+}
+/* Backdrop blur overlay on sections that use parallax-img as full-bleed background */
+.jeskojets-scroll-block .parallax-content section:has(> .parallax-img)::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.jeskojets-scroll-block .parallax-content h2 {
+    color: #fff;
+    font-size: clamp(2.5rem, 5vw, 4.6rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+.jeskojets-scroll-block .parallax-content p {
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.3;
+}
+.jeskojets-scroll-block .parallax-content .p-btn {
+    display: inline-block;
+    text-transform: capitalize;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0.25em 0;
+    padding: 0.4em 1em;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 2em;
+    text-decoration: none;
+    cursor: pointer;
+}
+.jeskojets-scroll-block .parallax-content .p-btn:hover {
+    opacity: 0.9;
+}
+
+.jeskojets-scroll-block .p-hero {
+    position: relative;
+    background: linear-gradient(135deg, #C2E6EB 0%, #DBEDD9 35%, #F1E3BB 65%, #FBE4D2 100%);
+}
+.jeskojets-scroll-block .p-hero-copy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 67%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2rem 0 3rem;
+    z-index: 2;
+    text-align: left;
+}
+.jeskojets-scroll-block .p-hero-copy p {
+    color: #2a2a2a;
+    font-size: 2.4rem;
+    line-height: 1.3;
+    margin: 0;
+    font-weight: 500;
+}
+.jeskojets-scroll-block .p-projects {
+    height: 125vh;
+    display: flex;
+    gap: 2rem;
+}
+.jeskojets-scroll-block .p-projects .p-col {
+    position: relative;
+    z-index: 1;
+}
+.jeskojets-scroll-block .p-col.p-projects-cover {
+    flex: 1;
+    height: 50%;
+}
+.jeskojets-scroll-block .p-col.p-projects-list {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5em;
+    padding-left: 1rem;
+}
+.jeskojets-scroll-block .p-project {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.jeskojets-scroll-block .p-project h2 {
+    margin-bottom: 0.4em;
+}
+.jeskojets-scroll-block .p-project p {
+    margin-bottom: 0;
+    font-size: 25px;
+    line-height: 1.3;
+}
+.jeskojets-scroll-block .p-project:first-child p {
+    margin-bottom: 1.5em;
+}
+/* Match .p-disciplines: checkmarks, same size/spacing as What Must Be Built */
+.jeskojets-scroll-block .p-projects-rigor-list {
+    list-style: none;
+    margin: 0 0 1em 0;
+    padding: 0 0 0 1.5em;
+}
+.jeskojets-scroll-block .p-projects-rigor-list li {
+    margin-bottom: 0.35em;
+    font-size: 25px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    line-height: 1.3;
+    position: relative;
+    color: #fff;
+}
+.jeskojets-scroll-block .p-projects-rigor-list li::before {
+    content: "✓";
+    position: absolute;
+    left: -1.5em;
+    color: currentColor;
+}
+
+.jeskojets-scroll-block .p-about {
+    display: flex;
+    background: linear-gradient(to bottom right, #FFF2E3 0%, #E2F6FF 100%);
+}
+.jeskojets-scroll-block .p-about .p-intro h2,
+.jeskojets-scroll-block .p-about .p-intro p,
+.jeskojets-scroll-block .p-about .p-disciplines li {
+    color: #000;
+}
+.jeskojets-scroll-block .p-intro,
+.jeskojets-scroll-block .p-portrait {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+.jeskojets-scroll-block .p-intro {
+    align-items: flex-start;
+}
+.jeskojets-scroll-block .p-intro p {
+    width: 70%;
+    text-align: left;
+}
+.jeskojets-scroll-block .p-intro h2 {
+    margin-bottom: 0.4em;
+}
+.jeskojets-scroll-block .p-intro p {
+    text-transform: none;
+}
+.jeskojets-scroll-block .p-intro p:first-of-type {
+    margin-bottom: 1.5em;
+}
+.jeskojets-scroll-block .p-disciplines {
+    list-style: none;
+    margin: 0 0 1em 0;
+    padding: 0 0 0 1.5em;
+}
+.jeskojets-scroll-block .p-disciplines li {
+    margin-bottom: 0.35em;
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+    position: relative;
+}
+.jeskojets-scroll-block .p-disciplines li::before {
+    content: "✓";
+    position: absolute;
+    left: -1.5em;
+    color: currentColor;
+}
+.jeskojets-scroll-block .p-portrait .p-portrait-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Circle section: image left, text right (same layout as p-about, column order swapped) */
+.jeskojets-scroll-block .p-circle {
+    display: flex;
+    background: radial-gradient(ellipse at center, #184a40 0%, #0f332e 45%, #081a17 100%);
+}
+.jeskojets-scroll-block .p-circle-portrait,
+.jeskojets-scroll-block .p-circle-intro {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+.jeskojets-scroll-block .p-circle-intro {
+    text-align: left;
+    align-items: flex-start;
+}
+/* Match What Must Be Built typography and spacing */
+.jeskojets-scroll-block .p-circle-intro p {
+    width: 70%;
+    text-transform: none;
+    font-size: 20px;
+    line-height: 1.3;
+}
+.jeskojets-scroll-block .p-circle-intro h2 {
+    margin-bottom: 0.4em;
+}
+.jeskojets-scroll-block .p-circle-intro p:first-of-type {
+    margin-bottom: 1.5em;
+}
+.jeskojets-scroll-block .p-circle-intro .p-disciplines {
+    margin: 0 0 1em 0;
+}
+.jeskojets-scroll-block .p-circle-intro .p-disciplines li {
+    margin-bottom: 0.35em;
+    font-size: 20px;
+    line-height: 1.3;
+}
+.jeskojets-scroll-block .p-circle-portrait .p-portrait-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.jeskojets-scroll-block .p-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(2rem, 5vw, 4rem) 0;
+    gap: 0;
+}
+.jeskojets-scroll-block .p-banner-copy {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    width: 100%;
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 3rem);
+}
+.jeskojets-scroll-block .p-banner-copy h2 {
+    text-transform: capitalize;
+    margin-bottom: 1.25rem;
+}
+.jeskojets-scroll-block .p-banner-copy p {
+    max-width: 100%;
+    margin-bottom: 1.25rem;
+}
+.jeskojets-scroll-block .p-banner-copy p:last-of-type {
+    margin-bottom: 1.5rem;
+}
+.jeskojets-scroll-block .p-banner-copy p:nth-of-type(2) {
+    width: 100%;
+    margin: 0 auto 1.25rem;
+}
+.jeskojets-scroll-block .p-banner-copy .p-btn {
+    margin-top: 0.25rem;
+}
+@media (max-width: 900px) {
+    .jeskojets-scroll-block .p-banner {
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+        justify-content: flex-start;
+        min-height: 100vh;
+    }
+    .jeskojets-scroll-block .p-banner-copy {
+        padding-top: 1.5rem;
+    }
+}
+
+/* Floating impact cards in banner – full width like Where You Choose to Build */
+.jeskojets-scroll-block .p-banner-cards {
+    position: relative;
+    width: 100%;
+    z-index: 3;
+    margin-top: 2.5rem;
+    padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-radius: 0;
+    border: none;
+}
+.jeskojets-scroll-block .p-banner-cards-title {
+    color: #fff;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.jeskojets-scroll-block .p-impact-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+@media (max-width: 768px) {
+    .jeskojets-scroll-block .p-impact-cards {
+        grid-template-columns: 1fr;
+    }
+}
+.jeskojets-scroll-block .p-impact-card {
+    padding: 1.5rem;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    text-decoration: none;
+    color: inherit;
+}
+.jeskojets-scroll-block .p-impact-card:hover {
+    opacity: 0.92;
+}
+.jeskojets-scroll-block .p-impact-amount {
+    color: #000;
+    font-family: "Inter", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+.jeskojets-scroll-block .p-impact-desc {
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 0.8rem;
+    line-height: 1.3;
+    text-transform: none;
+}
+.jeskojets-scroll-block .p-banner-cards .p-btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+/* Checker section: slider (carousel) */
+.jeskojets-scroll-block .p-checker {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(2rem, 5vw, 4rem) 0;
+    gap: 0;
+}
+.jeskojets-scroll-block .p-checker-copy {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    width: 100%;
+    padding: 0 clamp(1.5rem, 5vw, 3rem);
+    margin-bottom: 1.5rem;
+}
+.jeskojets-scroll-block .p-checker-copy h2 {
+    text-transform: capitalize;
+}
+.jeskojets-scroll-block .p-checker-cards {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    margin: 0;
+    padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+/* Where You Choose to Build cards – black text only inside these boxes */
+.jeskojets-scroll-block .p-checker .p-checker-slide {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-width: 0;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: #000;
+}
+.jeskojets-scroll-block .p-checker .p-checker-slide .p-checker-slide-title,
+.jeskojets-scroll-block .p-checker .p-checker-slide .p-checker-slide-desc {
+    color: #000;
+}
+.jeskojets-scroll-block .p-checker-slide-title {
+    font-family: "Inter", sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-weight: 500;
+    line-height: 1.25;
+    text-transform: none;
+}
+.jeskojets-scroll-block .p-checker-slide-desc {
+    line-height: 1.4;
+    text-transform: none;
+    flex: 1;
+}
+.jeskojets-scroll-block .checker-card-desc {
+    font-size: 15px !important;
+}
+.jeskojets-scroll-block .p-checker-slide .p-checker-slide-cta {
+    margin-top: auto;
+    padding-top: 0.6rem;
+    padding-bottom: 0;
+    border-top: 1px dashed rgba(0, 0, 0, 0.25);
+}
+.jeskojets-scroll-block .p-checker-slide .p-checker-cta-link {
+    margin-top: 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #000;
+    background: none;
+    border: none;
+    border-radius: 0;
+    text-transform: none;
+    text-decoration: none;
+}
+.jeskojets-scroll-block .p-checker-slide .p-checker-cta-link:hover {
+    opacity: 0.75;
+}
+.jeskojets-scroll-block .p-checker-slide .p-checker-cta-link .p-btn-arrow {
+    margin-left: 0.25em;
+}
+.jeskojets-scroll-block .p-checker-footer {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    max-width: 42rem;
+    margin: 2rem auto 0;
+    padding: 0 clamp(1.5rem, 5vw, 3rem);
+}
+.jeskojets-scroll-block .p-checker-footer p {
+    margin-bottom: 1rem;
+}
+.jeskojets-scroll-block .p-checker-footer .p-btn {
+    display: inline-block;
+}
+
+/* Voices of Bayan – last section, solid background */
+.jeskojets-scroll-block .p-voices {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(2rem, 5vw, 4rem) 0;
+    gap: 0;
+    background: #2a3736;
+}
+.jeskojets-scroll-block .p-voices-copy {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    width: 100%;
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 3rem);
+}
+.jeskojets-scroll-block .p-voices-copy h2 {
+    color: #fff;
+    text-transform: none;
+    margin-bottom: 0.5rem;
+}
+.jeskojets-scroll-block .p-voices-copy .p-voices-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+}
+.jeskojets-scroll-block .p-voices-copy p {
+    color: #fff;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+}
+.jeskojets-scroll-block .p-voices-copy .p-btn {
+    display: inline-block;
+    margin-top: 0.25rem;
+}
+
+/* Checker: tablet – 2 columns or scrollable row */
+@media (max-width: 900px) {
+    .jeskojets-scroll-block .p-checker-cards {
+        grid-template-columns: repeat(5, minmax(260px, 1fr));
+        gap: 0.75rem;
+        padding: 0 1rem;
+    }
+    .jeskojets-scroll-block .p-checker-slide {
+        padding: 1.25rem;
+    }
+    .jeskojets-scroll-block .p-checker-copy {
+        padding: 0 1rem;
+        margin-bottom: 1rem;
+    }
+    .jeskojets-scroll-block .p-checker-copy h2 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+    .jeskojets-scroll-block .p-checker-footer {
+        padding: 0 1rem;
+        margin-top: 1.5rem;
+    }
+    .jeskojets-scroll-block .p-checker-footer p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Checker: mobile – one card in view, swipe to scroll */
+@media (max-width: 600px) {
+    .jeskojets-scroll-block .p-checker-cards {
+        display: flex;
+        flex-direction: row;
+        grid-template-columns: unset;
+        gap: 0.75rem;
+        padding: 0 0.75rem;
+        scroll-padding: 0 0.75rem;
+    }
+    .jeskojets-scroll-block .p-checker-slide {
+        flex: 0 0 85%;
+        min-width: 85%;
+        max-width: 85%;
+        padding: 1.25rem;
+    }
+    .jeskojets-scroll-block .p-checker-slide-title {
+        font-size: 1.05rem;
+    }
+    .jeskojets-scroll-block .p-checker-footer {
+        margin-top: 1.25rem;
+    }
+    .jeskojets-scroll-block .p-checker-footer p {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+}
+
+/* Checker: small mobile */
+@media (max-width: 380px) {
+    .jeskojets-scroll-block .p-checker-slide {
+        flex: 0 0 92%;
+        min-width: 92%;
+        max-width: 92%;
+        padding: 1rem;
+    }
+    .jeskojets-scroll-block .p-checker-copy h2 {
+        font-size: 1.35rem;
+    }
+}
+
+.jeskojets-scroll-block .p-footer {
+    display: flex;
+    padding: 2rem;
+    background: #68461f;
+    height: auto;
+    min-height: 80vh;
+}
+.jeskojets-scroll-block .p-footer h2 {
+    text-transform: capitalize;
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+.jeskojets-scroll-block .p-footer .p-col:first-child {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.jeskojets-scroll-block .p-footer .p-col:last-child {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.jeskojets-scroll-block .p-footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.jeskojets-scroll-block .p-shop {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+@media (max-width: 900px) {
+    .jeskojets-scroll-block .p-projects {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+    .jeskojets-scroll-block .p-hero-copy {
+        width: 85%;
+        max-width: none;
+        padding: 0 1.5rem;
+    }
+    .jeskojets-scroll-block .p-hero-copy p {
+        font-size: 1.1rem;
+        line-height: 1.35;
+    }
+    .jeskojets-scroll-block .p-about,
+    .jeskojets-scroll-block .p-circle {
+        flex-direction: column;
+    }
+    .jeskojets-scroll-block .p-footer {
+        flex-direction: column;
+    }
+}
+
+/* Sticky floating donate CTA – bottom center */
+.jeskojets-scroll-block .jeskojets-floating-cta {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 2em;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    transition: opacity 0.2s, transform 0.2s;
+}
+.jeskojets-scroll-block .jeskojets-floating-cta:hover {
+    opacity: 0.95;
+    transform: translateX(-50%) translateY(-1px);
+}
+
+/* Outro */
+.jeskojets-scroll-block .outro {
+    display: flex; justify-content: center; align-items: center;
+    text-align: center;
+    background-color: var(--jesko-light);
+    color: var(--jesko-dark);
+    height: 100vh;
+}
+
+@media (max-width: 1000px) {
+    .jeskojets-scroll-block h1 { font-size: 3rem; }
+    .jeskojets-scroll-block .hero-inner .hero-header { padding: 1.5rem; }
+    .jeskojets-scroll-block .hero-inner .hero-header .col p { width: 100%; }
+    .jeskojets-scroll-block .hero-inner .window-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+    .jeskojets-scroll-block .hero-inner .sky-container img {
+        object-fit: cover;
+        object-position: center center;
+    }
+}
