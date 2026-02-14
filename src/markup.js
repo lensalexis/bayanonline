@@ -19,12 +19,14 @@ export const markup = `
 
             <div class="hero-header">
                 <div class="col">
-                    <h1>Build What Endures</h1>
-                   <p>Bayan forms scholars, educators, chaplains, and community leaders grounded in tradition and prepared for the realities of our time.</p>
+                    <div class="hero-title-block">
+                        <h1>Build What Endures</h1>
+                        <p class="hero-ramadan">Ramadan 1447</p>
+                    </div>
+                    <p>Bayan forms scholars, educators, chaplains, and community leaders grounded in tradition and prepared for the realities of our time.</p>
                 </div>
-                <div class="col">
-                    <p class="scroll-down-prompt"><span aria-hidden="true"></span>[Scroll Down]</p>
-                    <h1>Ramadan 1447</h1>
+                <div class="col hero-col-scroll">
+                    <p class="scroll-down-prompt"><span class="scroll-down-arrow" aria-hidden="true"><img src="/down-arrow.svg" alt="" class="scroll-down-arrow-img" /></span>SCROLL DOWN</p>
                 </div>
             </div>
         </div>
@@ -32,9 +34,17 @@ export const markup = `
 
     <div class="parallax-content">
         <section class="p-hero">
-            <div class="p-hero-copy">
+                  
+            <div class="p-col p-hero-copy">
                 <p>Across the country, Muslim leaders step into roles that demand more than knowledge alone. They are asked to guide, to stabilize, to counsel, to teach, and to lead with wisdom rooted in faith.</p>
             </div>
+            <div class="p-col p-portrait">
+                <div class="p-portrait-container">
+                    <div class="parallax-img">
+                        <img src="/graduation-speaker.jpeg" alt="" />
+                    </div>
+                </div>
+            </div>  
         </section>
 
         <section class="p-projects">
@@ -102,7 +112,7 @@ export const markup = `
 
         <section class="p-checker">
             <div class="parallax-img">
-                <img src="/2151986486.jpg" alt="" />
+                <img src="/librarybooks.jpeg" alt="" />
             </div>
             <div class="p-checker-copy">
                 <h2>Where You Choose to Build</h2>
@@ -153,7 +163,7 @@ export const markup = `
             <div class="p-col p-circle-portrait">
                 <div class="p-portrait-container">
                     <div class="parallax-img">
-                        <img src="/5w3a0368_53902762331_o.jpg" alt="" />
+                        <img src="/islam-boy.jpeg" alt="" />
                     </div>
                 </div>
             </div>
@@ -180,6 +190,9 @@ export const markup = `
                 <p class="p-voices-subtitle">Formed in tradition. Carried forward.</p>
                 <p>Brief audio reflections from Bayan's most trusted voices, created to accompany daily life during Ramadan and beyond. Rooted in tradition and clarity.</p>
                 <a href="https://bayanonline.org/voices-of-bayan" class="p-btn" target="_blank" rel="noopener noreferrer">Listen to a Voice of Bayan Now</a>
+                <div class="p-voices-waves" aria-hidden="true">
+                    <span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span><span class="p-voices-wave-bar"></span>
+                </div>
             </div>
         </section>
     </div>

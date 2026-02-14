@@ -1,5 +1,5 @@
 /* Fonts — loaded with the bundle so HubSpot doesn't need a separate link */
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap");
 
 body { margin: 0; }
 
@@ -148,28 +148,62 @@ html.lenis { height: auto; }
     flex: 1;
     display: flex; flex-direction: column; justify-content: space-between;
 }
+.jeskojets-scroll-block .hero-inner .hero-header .hero-title-block {
+    display: block;
+    line-height: 1;
+}
+.jeskojets-scroll-block .hero-inner .hero-header .hero-title-block h1 {
+    font-family: "Funnel Display", sans-serif;
+    margin: 0;
+    line-height: 1;
+}
+.jeskojets-scroll-block .hero-inner .hero-header .col .hero-ramadan {
+    font-family: "Libre Caslon Text", serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--jesko-light);
+    margin: 0.08em 0 0 0;
+    line-height: 2;
+    width: auto;
+}
 .jeskojets-scroll-block .hero-inner .hero-header .col p {
     width: 60%;
     opacity: 0.9;
 }
+.jeskojets-scroll-block .hero-inner .hero-header .col p:not(.hero-ramadan) {
+    margin-bottom: 2.5rem;
+}
 .jeskojets-scroll-block .hero-inner .hero-header .col:nth-child(2) {
     align-items: flex-end;
     text-align: right;
+}
+.jeskojets-scroll-block .hero-inner .hero-header .hero-col-scroll {
+    justify-content: flex-end;
+    padding-right: 0;
+}
+.jeskojets-scroll-block .hero-inner .hero-header .hero-col-scroll .scroll-down-prompt {
+    margin-right: -5rem;
 }
 
 .jeskojets-scroll-block .scroll-down-prompt {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 .jeskojets-scroll-block .scroll-down-arrow {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-left: 0.4em solid transparent;
-    border-right: 0.4em solid transparent;
-    border-top: 0.5em solid currentColor;
+    display: inline-flex;
+    align-items: center;
     animation: scroll-down-bounce 1.5s ease-in-out infinite;
+}
+.jeskojets-scroll-block .scroll-down-arrow-img {
+    width: 1.25em;
+    height: auto;
+    flex-shrink: 0;
+    display: block;
 }
 @keyframes scroll-down-bounce {
     0%, 100% { transform: translateY(0); }
@@ -245,20 +279,20 @@ html.lenis { height: auto; }
 
 .jeskojets-scroll-block .p-hero {
     position: relative;
+    display: flex;
     background: linear-gradient(135deg, #C2E6EB 0%, #DBEDD9 35%, #F1E3BB 65%, #FBE4D2 100%);
 }
-.jeskojets-scroll-block .p-hero-copy {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 67%;
+.jeskojets-scroll-block .p-hero .p-hero-copy {
+    position: relative;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0 2rem 0 3rem;
-    z-index: 2;
     text-align: left;
+}
+.jeskojets-scroll-block .p-hero .p-portrait {
+    flex: 1;
 }
 .jeskojets-scroll-block .p-hero-copy p {
     color: #2a2a2a;
@@ -330,7 +364,7 @@ html.lenis { height: auto; }
 
 .jeskojets-scroll-block .p-about {
     display: flex;
-    background: linear-gradient(to bottom right, #FFF2E3 0%, #E2F6FF 100%);
+    background: linear-gradient(135deg, #C2E6EB 0%, #DBEDD9 35%, #F1E3BB 65%, #FBE4D2 100%);
 }
 .jeskojets-scroll-block .p-about .p-intro h2,
 .jeskojets-scroll-block .p-about .p-intro p,
@@ -389,7 +423,8 @@ html.lenis { height: auto; }
 /* Circle section: image left, text right (same layout as p-about, column order swapped) */
 .jeskojets-scroll-block .p-circle {
     display: flex;
-    background: radial-gradient(ellipse at center, #184a40 0%, #0f332e 45%, #081a17 100%);
+    background: linear-gradient(135deg, #C2E6EB 0%, #DBEDD9 35%, #F1E3BB 65%, #FBE4D2 100%);
+    color: #000;
 }
 .jeskojets-scroll-block .p-circle-portrait,
 .jeskojets-scroll-block .p-circle-intro {
@@ -405,15 +440,17 @@ html.lenis { height: auto; }
     text-align: left;
     align-items: flex-start;
 }
-/* Match What Must Be Built typography and spacing */
+/* Match What Must Be Built typography and spacing (override .parallax-content p white) */
 .jeskojets-scroll-block .p-circle-intro p {
     width: 70%;
     text-transform: none;
     font-size: 20px;
     line-height: 1.3;
+    color: #000;
 }
 .jeskojets-scroll-block .p-circle-intro h2 {
     margin-bottom: 0.4em;
+    color: #000;
 }
 .jeskojets-scroll-block .p-circle-intro p:first-of-type {
     margin-bottom: 1.5em;
@@ -425,6 +462,7 @@ html.lenis { height: auto; }
     margin-bottom: 0.35em;
     font-size: 20px;
     line-height: 1.3;
+    color: #000;
 }
 .jeskojets-scroll-block .p-circle-portrait .p-portrait-container {
     position: relative;
@@ -693,6 +731,58 @@ html.lenis { height: auto; }
     margin-top: 0.25rem;
 }
 
+/* Active sound waves below the button – dense waveform style */
+.jeskojets-scroll-block .p-voices-waves {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1px;
+    margin-top: 2rem;
+    height: 3.25rem;
+    width: 100%;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.jeskojets-scroll-block .p-voices-wave-bar {
+    flex: 0 0 3px;
+    width: 3px;
+    height: 100%;
+    min-height: 6px;
+    background: #fff;
+    border-radius: 1px;
+    transform-origin: bottom;
+    animation: p-voices-wave-a 1.2s ease-in-out infinite;
+}
+.jeskojets-scroll-block .p-voices-wave-bar:nth-child(4n+1) { animation-name: p-voices-wave-a; }
+.jeskojets-scroll-block .p-voices-wave-bar:nth-child(4n+2) { animation-name: p-voices-wave-b; }
+.jeskojets-scroll-block .p-voices-wave-bar:nth-child(4n+3) { animation-name: p-voices-wave-c; }
+.jeskojets-scroll-block .p-voices-wave-bar:nth-child(4n)   { animation-name: p-voices-wave-d; }
+.jeskojets-scroll-block .p-voices-wave-bar:nth-child(8n+1) { animation-delay: 0s;      }
+.jeskojets-scroll-block .p-voices-wave-bar:nth-child(8n+2) { animation-delay: 0.08s;   }
+.jeskojets-scroll-block .p-voices-wave-bar:nth-child(8n+3) { animation-delay: 0.16s;   }
+.jeskojets-scroll-block .p-voices-wave-bar:nth-child(8n+4) { animation-delay: 0.24s;   }
+.jeskojets-scroll-block .p-voices-wave-bar:nth-child(8n+5) { animation-delay: 0.32s;   }
+.jeskojets-scroll-block .p-voices-wave-bar:nth-child(8n+6) { animation-delay: 0.4s;    }
+.jeskojets-scroll-block .p-voices-wave-bar:nth-child(8n+7) { animation-delay: 0.48s;   }
+.jeskojets-scroll-block .p-voices-wave-bar:nth-child(8n)   { animation-delay: 0.56s;   }
+@keyframes p-voices-wave-a {
+    0%, 100% { transform: scaleY(0.2);  }
+    50%      { transform: scaleY(0.95); }
+}
+@keyframes p-voices-wave-b {
+    0%, 100% { transform: scaleY(0.5);  }
+    50%      { transform: scaleY(0.35); }
+}
+@keyframes p-voices-wave-c {
+    0%, 100% { transform: scaleY(0.35); }
+    50%      { transform: scaleY(0.85); }
+}
+@keyframes p-voices-wave-d {
+    0%, 100% { transform: scaleY(0.7);  }
+    50%      { transform: scaleY(0.25); }
+}
+
 /* Checker: tablet – 2 columns or scrollable row */
 @media (max-width: 900px) {
     .jeskojets-scroll-block .p-checker-cards {
@@ -797,23 +887,73 @@ html.lenis { height: auto; }
 }
 
 @media (max-width: 900px) {
+    .jeskojets-scroll-block .parallax-content section {
+        padding-bottom: 5.5rem;
+    }
+    .jeskojets-scroll-block .parallax-content section.p-hero,
+    .jeskojets-scroll-block .parallax-content section.p-about,
+    .jeskojets-scroll-block .parallax-content section.p-circle {
+        min-height: 0;
+        height: auto;
+    }
+    .jeskojets-scroll-block .p-hero,
+    .jeskojets-scroll-block .p-about,
+    .jeskojets-scroll-block .p-circle {
+        min-height: 0;
+    }
+    .jeskojets-scroll-block .p-about .p-intro,
+    .jeskojets-scroll-block .p-circle .p-circle-intro {
+        padding-bottom: 1rem;
+    }
     .jeskojets-scroll-block .p-projects {
         flex-direction: column;
         height: auto;
         min-height: 100vh;
     }
-    .jeskojets-scroll-block .p-hero-copy {
+    .jeskojets-scroll-block .p-hero {
+        flex-direction: column;
+    }
+    .jeskojets-scroll-block .p-hero .p-portrait {
+        order: 1;
+        flex: none;
+        min-height: 40vh;
+    }
+    .jeskojets-scroll-block .p-hero .p-hero-copy {
+        order: 2;
+        flex: none;
         width: 85%;
         max-width: none;
-        padding: 0 1.5rem;
+        padding: 0 1.5rem 2rem 1.5rem;
     }
     .jeskojets-scroll-block .p-hero-copy p {
-        font-size: 1.1rem;
+        font-size: 25px;
         line-height: 1.35;
     }
     .jeskojets-scroll-block .p-about,
     .jeskojets-scroll-block .p-circle {
         flex-direction: column;
+    }
+    .jeskojets-scroll-block .p-about .p-portrait {
+        order: 1;
+        flex: none;
+        min-height: 40vh;
+    }
+    .jeskojets-scroll-block .p-about .p-intro {
+        order: 2;
+        flex: none;
+    }
+    .jeskojets-scroll-block .p-circle .p-circle-portrait {
+        order: 1;
+        flex: none;
+        min-height: 40vh;
+    }
+    .jeskojets-scroll-block .p-circle .p-circle-intro {
+        order: 2;
+        flex: none;
+    }
+    .jeskojets-scroll-block .p-portrait .p-portrait-container,
+    .jeskojets-scroll-block .p-circle-portrait .p-portrait-container {
+        min-height: 40vh;
     }
     .jeskojets-scroll-block .p-footer {
         flex-direction: column;
@@ -858,7 +998,26 @@ html.lenis { height: auto; }
 
 @media (max-width: 1000px) {
     .jeskojets-scroll-block h1 { font-size: 3rem; }
-    .jeskojets-scroll-block .hero-inner .hero-header { padding: 1.5rem; }
+    .jeskojets-scroll-block .hero-inner .hero-header {
+        padding: 1.5rem 1.5rem 5.5rem 1.5rem;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .jeskojets-scroll-block .hero-inner .hero-header .col:first-child {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .jeskojets-scroll-block .hero-inner .hero-header .hero-col-scroll {
+        flex: none;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .jeskojets-scroll-block .hero-inner .hero-header .col:nth-child(2) {
+        text-align: left;
+    }
+    .jeskojets-scroll-block .hero-inner .hero-header .hero-col-scroll .scroll-down-prompt { margin-right: 0; }
     .jeskojets-scroll-block .hero-inner .hero-header .col p { width: 100%; }
     .jeskojets-scroll-block .hero-inner .window-container img {
         width: 100%;
