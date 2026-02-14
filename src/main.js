@@ -41,10 +41,9 @@ function init() {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // Lenis smooth scroll (shorter duration on mobile for snappier feel)
-  const isMobile = window.matchMedia('(max-width: 900px)').matches || 'ontouchstart' in window;
+  // Lenis smooth scroll
   const lenis = new Lenis({
-    duration: isMobile ? 0.9 : 1.2,
+    duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smooth: true,
   });
