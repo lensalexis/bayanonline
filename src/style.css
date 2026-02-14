@@ -313,6 +313,7 @@ html.lenis { height: auto; }
 .jeskojets-scroll-block .p-col.p-projects-cover {
     flex: 1;
     height: 50%;
+    min-height: 40vh;
 }
 .jeskojets-scroll-block .p-col.p-projects-list {
     flex: 2;
@@ -321,7 +322,7 @@ html.lenis { height: auto; }
     justify-content: center;
     align-items: flex-start;
     gap: 0.5em;
-    padding-left: 1rem;
+    padding: 0 clamp(1.5rem, 5vw, 3rem);
 }
 .jeskojets-scroll-block .p-project {
     text-align: left;
@@ -796,6 +797,7 @@ html.lenis { height: auto; }
     .jeskojets-scroll-block .p-checker-copy {
         padding: 0 1rem;
         margin-bottom: 1rem;
+        margin-top: 3.5rem;
     }
     .jeskojets-scroll-block .p-checker-copy h2 {
         font-size: clamp(1.5rem, 4vw, 2rem);
@@ -805,7 +807,7 @@ html.lenis { height: auto; }
         margin-top: 1.5rem;
     }
     .jeskojets-scroll-block .p-checker-footer p {
-        font-size: 0.9rem;
+        font-size: 20px;
     }
 }
 
@@ -832,7 +834,7 @@ html.lenis { height: auto; }
         margin-top: 1.25rem;
     }
     .jeskojets-scroll-block .p-checker-footer p {
-        font-size: 0.85rem;
+        font-size: 20px;
         margin-bottom: 0.75rem;
     }
 }
@@ -909,6 +911,12 @@ html.lenis { height: auto; }
         flex-direction: column;
         height: auto;
         min-height: 100vh;
+    }
+    .jeskojets-scroll-block .p-projects .p-projects-cover {
+        min-height: 40vh;
+    }
+    .jeskojets-scroll-block .p-projects .p-projects-list {
+        padding: 0 clamp(1.5rem, 5vw, 3rem);
     }
     .jeskojets-scroll-block .p-hero {
         flex-direction: column;
